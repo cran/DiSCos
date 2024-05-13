@@ -1,8 +1,13 @@
-# DiSCos 0.0.2
+# DiSCos 0.1.0
 
-* Fixed an issue with the `q_min`, `q_max` option.
-* Fixed a small coding mistake in the permutation test.
-* Fixed a small coding mistake in the `DiSCo_TEA` function for the quantile and cdf differences.
+Major updates:
+* Implemented the fully-fledged bootstrap approach for confidence interval estimation. See Van Dijcke, Gunsilius, and Wright (2024)
+* Added mixture of distributions method CDFs, confidence intervals, and permutation test 
+
+Minor updates:
+* Fixed a small issue where plot=FALSE option didn't work in DiSCoTEA
+* Added option to supply ordinal vector of discrete points for mixture of distributions
+
 
 # DiSCos 0.0.1
 

@@ -4,7 +4,7 @@
 #' @param q A vector containing the quantiles
 #' @return A vector containing the empirical quantile function
 #' @keywords internal
-myQuant <- function(X,q, qmethod=NULL,...){
+myQuant <- function(X,q, qtype=7, qmethod=NULL,...){
   # sort if unsorted
   # if (is.unsorted(X)) X <- sort(X)
 
@@ -14,8 +14,7 @@ myQuant <- function(X,q, qmethod=NULL,...){
   }
   if (is.null(qmethod)) { # use old-fashioned quantiles
     # obtain the corresponding empirical quantile
-    # return(mapply(myquant, q, MoreArgs = list(X=X)))
-    return(stats::quantile(X, probs=q))
+    return(stats::quantile(X, probs=q, names=FALSE, type=qtype))
   } else if (qmethod=="qkden") {
     temp <- evmix::qkden(p=q, kerncentres=X,...)
     temp[1] <- min(c(temp[2]), min(X))
@@ -69,7 +68,7 @@ getGrid <- function(target, controls, G) {
 #' @return NULL
 #' @keywords internal
 checks <- function(df, id_col.target, t0, M, G, num.cores, permutation, q_min, q_max,
-                   CI, CI_placebo, boots, cl, graph,
+                   CI,  boots, cl, graph,
                    qmethod, seed) {
       # checks on the input data
   if (!id_col.target %in% df$id_col) {
@@ -182,9 +181,7 @@ checks <- function(df, id_col.target, t0, M, G, num.cores, permutation, q_min, q
     stop("q_min must be less than or equal to q_max")
   }
 
-  if (!is.logical(CI_placebo)) {
-    stop("CI_placebo must be logical")
-  }
+
 
   if (!is.null(qmethod)) {
     if (!qmethod %in% c("qkden", "extreme")) {

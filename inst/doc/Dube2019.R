@@ -21,7 +21,6 @@ knitr::opts_chunk$set(
 #  library(CVXR)
 #  library(DiSCos)
 #  library(ggplot2)
-#  devtools::load_all()
 
 ## -----------------------------------------------------------------------------
 #  data("dube")
@@ -37,7 +36,7 @@ knitr::opts_chunk$set(
 
 ## -----------------------------------------------------------------------------
 #  # retrieve the weights
-#  weights <- disco$Weights_DiSCo_avg
+#  weights <- disco$weights
 #  
 #  # retrieve the control unit IDs
 #  controls <- disco$control_ids
@@ -67,7 +66,7 @@ knitr::opts_chunk$set(
 #  summary(discot)
 
 ## -----------------------------------------------------------------------------
-#  ecdf(disco$results.periods$`2000`$target$quantiles)(3.5)
+#  stats::ecdf(disco$results.periods$`2000`$target$quantiles)(3.5)
 
 ## -----------------------------------------------------------------------------
 #  disco <- DiSCo(dube, id_col.target=id_col.target, t0=t0, G = 1000, num.cores = 1, permutation = TRUE, CI = TRUE, boots = 1000, graph = FALSE, q_min = 0, q_max=0.65, seed=1, simplex=TRUE)
