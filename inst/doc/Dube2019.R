@@ -1,7 +1,7 @@
 ## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
     comment = "#",
-    echo=TRUE,
+    echo=FALSE,
   error = FALSE,
   tidy = FALSE,
   cache = FALSE,

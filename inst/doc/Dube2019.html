@@ -12,7 +12,7 @@
 
 <meta name="author" content="David Van Dijcke" />
 
-<meta name="date" content="2024-05-13" />
+<meta name="date" content="2024-07-22" />
 
 <title>Empirical Application in Gunsilius (2023)</title>
 
@@ -41,107 +41,6 @@ ul.task-list{list-style: none;}
 
 
 
-<style type="text/css">
-code {
-white-space: pre;
-}
-.sourceCode {
-overflow: visible;
-}
-</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-color: #aaaaaa;
-}
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } 
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.at { color: #7d9029; } 
-code span.bn { color: #40a070; } 
-code span.bu { color: #008000; } 
-code span.cf { color: #007020; font-weight: bold; } 
-code span.ch { color: #4070a0; } 
-code span.cn { color: #880000; } 
-code span.co { color: #60a0b0; font-style: italic; } 
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.do { color: #ba2121; font-style: italic; } 
-code span.dt { color: #902000; } 
-code span.dv { color: #40a070; } 
-code span.er { color: #ff0000; font-weight: bold; } 
-code span.ex { } 
-code span.fl { color: #40a070; } 
-code span.fu { color: #06287e; } 
-code span.im { color: #008000; font-weight: bold; } 
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.kw { color: #007020; font-weight: bold; } 
-code span.op { color: #666666; } 
-code span.ot { color: #007020; } 
-code span.pp { color: #bc7a00; } 
-code span.sc { color: #4070a0; } 
-code span.ss { color: #bb6688; } 
-code span.st { color: #4070a0; } 
-code span.va { color: #19177c; } 
-code span.vs { color: #4070a0; } 
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    var j = 0;
-    while (j < rules.length) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
-        j++;
-        continue;
-      }
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') {
-        j++;
-        continue;
-      }
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -150,6 +49,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 div.csl-bib-body { }
 div.csl-entry {
 clear: both;
+margin-bottom: 0em;
 }
 .hanging div.csl-entry {
 margin-left:2em;
@@ -363,7 +263,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">Empirical Application in Gunsilius
 (2023)</h1>
 <h4 class="author">David Van Dijcke</h4>
-<h4 class="date">2024-05-13</h4>
+<h4 class="date">2024-07-22</h4>
 
 
 
@@ -413,19 +313,13 @@ the optimal weights across all periods.</p>
 <h1>Basic Usage</h1>
 <p>To get coding, we load the data from <span class="citation">Dube
 (2019)</span>, which is available in the package.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;dube&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">head</span>(dube)</span></code></pre></div>
 <p>To learn more about the data, just type <code>?dube</code> in the
 console. We have already renamed the outcome, id, and time variables to
 <code>y_col</code>, <code>id_col</code>, and <code>time_col</code>,
 respectively, which is required before passing the dataframe to the
 DiSCo command. We also need to set the two following parameters:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>id_col.target <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>t0 <span class="ot">&lt;-</span> <span class="dv">2003</span></span></code></pre></div>
 <p>which indicate the id of the treated unit and the time period of the
 intervention, respectively. We can now run the DiSCo command:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">copy</span>(dube)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>disco <span class="ot">&lt;-</span> <span class="fu">DiSCo</span>(df, id_col.target, t0, <span class="at">G =</span> <span class="dv">1000</span>, <span class="at">num.cores =</span> <span class="dv">1</span>, <span class="at">permutation =</span> <span class="cn">TRUE</span>, <span class="at">CI =</span> <span class="cn">TRUE</span>, <span class="at">boots =</span> <span class="dv">1000</span>, <span class="at">graph =</span> <span class="cn">TRUE</span>, <span class="at">simplex=</span><span class="cn">TRUE</span>, <span class="at">seed=</span><span class="dv">1</span>, <span class="at">q_max=</span><span class="fl">0.9</span>)</span></code></pre></div>
 <p>where we have chosen a grid (<code>G</code>) of 1000 quantiles and
 opted for parallel computation with 5 cores to speed up the permutation
 test and confidence intervals (<code>CI</code> is set to
@@ -442,23 +336,6 @@ produced by the command. Typing <code>?DiSCoT</code> in the console
 pulls up the help files which lay out the precise structure of the
 returned object. For now, we will just have a look at the top 10
 estimated weights,</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># retrieve the weights</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>weights <span class="ot">&lt;-</span> disco<span class="sc">$</span>weights</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># retrieve the control unit IDs </span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>controls <span class="ot">&lt;-</span> disco<span class="sc">$</span>control_ids</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co"># store in a dataframe</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>weights_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">weights =</span> weights, <span class="at">fips =</span> controls)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co"># merge with state fips codes (built into the maps package)</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>state.fips <span class="ot">&lt;-</span> <span class="fu">as.data.table</span>(maps<span class="sc">::</span>state.fips)</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>state.fips <span class="ot">&lt;-</span> state.fips[<span class="sc">!</span><span class="fu">duplicated</span>(state.fips<span class="sc">$</span>abb), <span class="fu">c</span>(<span class="st">&quot;fips&quot;</span>, <span class="st">&quot;abb&quot;</span>)]</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>weights_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(weights_df, state.fips, <span class="at">by =</span> <span class="st">&quot;fips&quot;</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="fu">setorder</span>(weights_df, <span class="sc">-</span>weights)</span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="fu">print</span>(weights_df[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span></code></pre></div>
 <p>When we ran the <code>DiSCo</code> command, we set
 <code>permutation</code> to <code>TRUE</code>, which runs the
 permutation test described in the paper (see <code>?DiSCo_per</code> for
@@ -485,7 +362,6 @@ Heaviside function which is 1 if <span class="math inline">\(x\geq
 0\)</span> and 0 otherwise. This p-value gives the probability of
 observing a placebo test with a larger ratio than the true treatment
 effect. It can be retrieved by calling</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">summary</span>(disco<span class="sc">$</span>perm)</span></code></pre></div>
 <p>The p-value is larger than 0.05, which confirms the visual result
 from the plot above, while accounting for potential differences in
 pre-treatment fit across placebo units.</p>
@@ -495,10 +371,6 @@ counterfactual quantile functions into various treatment effect
 measures. For example, we can calculate the difference between the
 counterfactual and observed quantile functions and cumulative
 distribution functions (CDF) as follows.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>discot <span class="ot">&lt;-</span> <span class="fu">DiSCoTEA</span>(disco,  <span class="at">agg=</span><span class="st">&quot;quantileDiff&quot;</span>, <span class="at">graph=</span><span class="cn">TRUE</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">summary</span>(discot)</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>discot <span class="ot">&lt;-</span> <span class="fu">DiSCoTEA</span>(disco,  <span class="at">agg=</span><span class="st">&quot;cdfDiff&quot;</span>, <span class="at">graph=</span><span class="cn">TRUE</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.05</span>, <span class="fl">0.05</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">summary</span>(discot)</span></code></pre></div>
 <p>Calling <code>summary</code> on the returned object prints a table
 summarizing the effects across the distribution. You can choose the
 intervals of quantiles over which it aggregates using the
@@ -535,19 +407,13 @@ interested in. For example, following <span class="citation">Dube
 (2019)</span>, we can focus on the lower end of the distribution, up
 until observations that earn 3.5 times the poverty income threshold.
 This corresponds to around the 0.65th quantile in our data:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">ecdf</span>(disco<span class="sc">$</span>results.periods<span class="sc">$</span><span class="st">`</span><span class="at">2000</span><span class="st">`</span><span class="sc">$</span>target<span class="sc">$</span>quantiles)(<span class="fl">3.5</span>)</span></code></pre></div>
 <p>We can simply run the following code,</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>disco <span class="ot">&lt;-</span> <span class="fu">DiSCo</span>(dube, <span class="at">id_col.target=</span>id_col.target, <span class="at">t0=</span>t0, <span class="at">G =</span> <span class="dv">1000</span>, <span class="at">num.cores =</span> <span class="dv">1</span>, <span class="at">permutation =</span> <span class="cn">TRUE</span>, <span class="at">CI =</span> <span class="cn">TRUE</span>, <span class="at">boots =</span> <span class="dv">1000</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>, <span class="at">q_min =</span> <span class="dv">0</span>, <span class="at">q_max=</span><span class="fl">0.65</span>, <span class="at">seed=</span><span class="dv">1</span>, <span class="at">simplex=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p>One could also try to deal with irregularity in the estimated
 quantile functions is by using the <code>qmethod</code> option in the
 <code>DiSCo</code> command, which allows for the use of alternative
 quantile estimation methods that can account for non-smoothness and
 extreme values. As above, we plot the results using the
 <code>DiScoTEA</code> function:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>discot <span class="ot">&lt;-</span> <span class="fu">DiSCoTEA</span>(disco, <span class="at">agg=</span><span class="st">&quot;quantileDiff&quot;</span>, <span class="at">graph=</span><span class="cn">TRUE</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">summary</span>(discot) </span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>discot <span class="ot">&lt;-</span> <span class="fu">DiSCoTEA</span>(disco, <span class="at">agg=</span><span class="st">&quot;cdfDiff&quot;</span>, <span class="at">graph=</span><span class="cn">TRUE</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.05</span>,<span class="fl">0.05</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">summary</span>(discot) </span></code></pre></div>
 <p>Again, we do not observe any subtantial changes in the quantile
 functions or CDFs. Also, the p-value of the permutation test is now
 larger, losing the marginal significance it had before. Overall, we
@@ -566,7 +432,7 @@ distributional fit, carried out a permutation test, and re-estimated the
 synthetic control for a restricted quantile range; all these robustness
 tests are available in the DiSCo package, together with handy graphing
 and aggregation tools.</p>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-abadie2010synthetic" class="csl-entry">
 Abadie, Alberto, Alexis Diamond, and Jens Hainmueller. 2010.
 <span>“Synthetic Control Methods for Comparative Case Studies:
